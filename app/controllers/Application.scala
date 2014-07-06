@@ -8,8 +8,10 @@ import models.ResourceX
 import models.ResourceDataStore
 
 
-object Application extends ResourceController[ResourceX] 
-		with EmberJson[ResourceX] {
+object Application extends ResourceController 
+		with EmberJson {
+  
+  type R = ResourceX
   
   implicit val resFormt = Json.format[ResourceX]
   
